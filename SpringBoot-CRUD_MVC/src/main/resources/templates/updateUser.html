@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.springframework.org/tags/form">
+<head>
+  <meta charset="UTF-8">
+  <title>Update User</title>
+  <style>
+    h1 {
+      text-align: left;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    label {
+      display: inline-block;
+      width: 50px;
+      font-size: 2rem;
+      text-align: left;
+      margin-right: 4px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="hidden"] {
+      background: #AFCDE7;
+      color: blue;
+      padding: 10px 20px;
+      font-size: 1.3rem
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 12px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+<form th:action="@{/updateUser}" th:object="${user}" th:method="POST">
+  <input type="hidden" th:field="*{id}"/>
+  <label for="name">Name</label>
+  <br/>
+  <input type="text" th:field="*{name}" id="name"/>
+
+  <br/>
+  <label for="lastName">Lastname</label>
+  <br/>
+  <input type="text"  th:field="*{lastName}" id = "lastName"/>
+
+  <br/>
+  <label for="age">Age</label>
+  <br/>
+  <input type="text" th:field="*{age}" id="age"/>
+
+  <br/>
+  <button type="submit" value="Ok">Submit</button>
+</form>
+</body>
+</html>
+
