@@ -1,7 +1,5 @@
 package com.example.springbootcrud_mvc.dao;
 
-
-
 import com.example.springbootcrud_mvc.model.User;
 
 import java.util.List;
